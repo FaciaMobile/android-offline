@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/facia_white_color"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/facia_white_color"
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feedbackParentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp">
+
+            <TextView
+                android:id="@+id/helpUsTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/help_us_improve"
+                android:textColor="@color/facia_black_color"
+                android:textSize="24sp"
+                android:lineSpacingExtra="3sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/questParentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/helpUsTxt">
+
+                <TextView
+                    android:id="@+id/satisfyQuest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/are_you_satisfied"
+                    android:textColor="@color/facia_black_color"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="1sp"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@id/satisfyIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/ic_satisfy_enabled"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/satisfyQuest" />
+
+                <ImageView
+                    android:id="@+id/noSatisfyIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/ic_no_satisfy_disabled"
+                    app:layout_constraintLeft_toRightOf="@+id/satisfyIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/satisfyQuest"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/lineBreak"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:alpha="0.1"
+                android:background="@color/facia_black_color"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questParentLayout" />
+
+            <TextView
+                android:id="@+id/suggestionHeadingTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/share_suggestion_heading"
+                android:textColor="@color/facia_black_color"
+                android:textSize="16sp"
+                android:lineSpacingExtra="1sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineBreak" />
+
+            <EditText
+                android:id="@+id/suggestionEdtTxt"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edit_txt_border"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/dark_text_color"
+                android:padding="12dp"
+                android:lineSpacingExtra="1sp"
+                android:textColorHint="@color/light_text_color"
+                android:textSize="14sp"
+                android:gravity="top|left"
+                android:hint="@string/suggestion_hint"
+                android:maxLength="500"
+                android:singleLine="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suggestionHeadingTxt"
+                tools:ignore="RtlHardcoded"
+                android:inputType="textMultiLine|textCapSentences" />
+
+            <TextView
+                android:id="@+id/textTaskEdtCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp"
+                android:paddingBottom="2dp"
+                android:text="@string/suggestion_max_length"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/suggestionEdtTxt"
+                app:layout_constraintRight_toRightOf="@id/suggestionEdtTxt"
+                tools:ignore="RtlSymmetry" />
+
+            <android.widget.Button
+                android:id="@+id/continueBtn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/btn_bg"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/continue_st"
+                android:textAllCaps="false"
+                android:textColor="@color/facia_white_color"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toBottomOf="@+id/suggestionEdtTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/facia_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

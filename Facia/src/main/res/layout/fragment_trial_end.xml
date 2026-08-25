@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/facia_white_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/footer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/trialHdng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="@string/trial_period_concluded"
+                android:textColor="@color/facia_black_color"
+                android:textSize="22sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/trialExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:text="@string/feel_free_to_reach_us"
+                android:textColor="@color/facia_black_color"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trialHdng" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="@+id/trialExp"
+                app:layout_constraintTop_toBottomOf="@+id/trialExp"
+                app:layout_constraintLeft_toLeftOf="@+id/trialExp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emailParentLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/no_trial_btn_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/meetingParentLayout">
+
+                <ImageView
+                    android:id="@+id/emailImg"
+                    android:layout_width="25dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/ic_email"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/emailTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/inter_medium"
+                    android:background="@drawable/btn_bg_rect"
+                    android:text="@string/email_us"
+                    android:textAllCaps="false"
+                    android:textColor="@color/facia_white_color"
+                    android:textSize="16sp"
+                    android:layout_margin="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/emailImg"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/meetingParentLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/no_trial_btn_bg"
+                app:layout_constraintLeft_toRightOf="@+id/emailParentLayout"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <ImageView
+                    android:id="@+id/meetingImg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/ic_calendar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/meetingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/inter_medium"
+                    android:background="@drawable/btn_bg_rect"
+                    android:text="@string/book_a_meeting"
+                    android:textAllCaps="false"
+                    android:textColor="@color/facia_white_color"
+                    android:textSize="16sp"
+                    android:layout_margin="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/meetingImg"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <android.widget.Button-->
+<!--                android:id="@+id/meetingBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:layout_marginTop="22dp"-->
+<!--                android:background="@drawable/btn_bg_rect"-->
+<!--                android:fontFamily="@font/inter_medium"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="@string/book_a_meeting"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/facia_white_color"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintLeft_toRightOf="@+id/emailBtn"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/trialExp" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/footer"
+            layout="@layout/facia_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

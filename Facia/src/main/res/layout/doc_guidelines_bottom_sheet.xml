@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/docGuidelinesBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_border"
+    android:paddingBottom="30dp">
+
+    <View
+        android:id="@+id/docBottomSheetTopBar"
+        android:layout_width="130dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.25"
+        android:background="@drawable/dialog_background"
+        android:backgroundTint="@color/facia_black_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/docGuidelinesCrossImg"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_cross"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docBottomSheetTopBar"
+        app:tint="@color/dark_text_color" />
+
+    <TextView
+        android:id="@+id/docGuidelinesTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="24dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/doc_guidelines_heading"
+        android:textColor="@color/facia_black_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docGuidelinesCrossImg" />
+
+    <TextView
+        android:id="@+id/docGuidelinesSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginHorizontal="40dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/doc_guidelines_subheading"
+        android:textColor="@color/light_text_color"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docGuidelinesTitle" />
+
+    <LinearLayout
+        android:id="@+id/docImagesRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/docGuidelinesSubtitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/docGuidelineGoodImg"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ic_correct"
+                android:padding="4dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                android:id="@+id/docGuidelineBadImg"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ic_wrong"
+                android:padding="4dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dosLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/doc_guidelines_dos"
+        android:textColor="#4CAF50"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#E8F5E9"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docImagesRow" />
+
+
+    <LinearLayout
+        android:id="@+id/dosItem1Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosLabel">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_doc_arrow"
+            app:tint="#4CAF50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/doc_guideline_3mb_image"
+            android:textColor="@color/dark_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dosItem2Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosItem1Layout">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_doc_arrow"
+            app:tint="#4CAF50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/doc_guideline_clean_cam"
+            android:textColor="@color/dark_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dosItem3Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosItem2Layout">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_doc_arrow"
+            app:tint="#4CAF50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/doc_guideline_hold_steady"
+            android:textColor="@color/dark_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dontsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/doc_guidelines_donts"
+        android:textColor="#F44336"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FFEBEE"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosItem3Layout" />
+
+    <LinearLayout
+        android:id="@+id/dontsItem1Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dontsLabel">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_doc_arrow"
+            app:tint="#F44336" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/doc_guideline_no_glare"
+            android:textColor="@color/dark_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dontsItem2Layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dontsItem1Layout">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_doc_arrow"
+            app:tint="#F44336" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/doc_guideline_no_crop"
+            android:textColor="@color/dark_text_color"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

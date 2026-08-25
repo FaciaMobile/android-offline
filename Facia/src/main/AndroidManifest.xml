@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.facia.faciasdk">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity
+            android:name=".Activity.FaciaVerify"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

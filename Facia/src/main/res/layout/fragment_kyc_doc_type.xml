@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/facia_white_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@id/faciaLogoImg"
+                android:layout_width="195dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="55dp"
+                android:background="@drawable/ic_facia_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faciaLogoImg">
+
+                <TextView
+                    android:id="@+id/kycDocTypeHeadingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/doc_type_heading"
+                    android:textColor="@color/facia_black_color"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/passportKycLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="38dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kycDocTypeHeadingTxt">
+
+                    <ImageView
+                        android:id="@+id/passportKycImg"
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_face_doc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/passportKycTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/international_passport"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/passportKycImg"
+                        app:layout_constraintLeft_toRightOf="@+id/passportKycImg"
+                        app:layout_constraintTop_toTopOf="@+id/passportKycImg" />
+
+                    <ImageView
+                        android:id="@+id/passportKycFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/passportKycImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/passportKycTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/passportKycImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/drivingLicenseKycLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/passportKycLayout">
+
+                    <ImageView
+                        android:id="@+id/drivingLicenseKycImg"
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_face_doc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/drivingLicenseKycTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/driving_license"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/drivingLicenseKycImg"
+                        app:layout_constraintLeft_toRightOf="@+id/drivingLicenseKycImg"
+                        app:layout_constraintTop_toTopOf="@+id/drivingLicenseKycImg" />
+
+                    <ImageView
+                        android:id="@+id/drivingLicenseKycFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/drivingLicenseKycImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/drivingLicenseKycTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/drivingLicenseKycImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/idCardKycLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/drivingLicenseKycLayout">
+
+                    <ImageView
+                        android:id="@+id/idCardKycImg"
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_face_doc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/idCardKycTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/id_card"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/idCardKycImg"
+                        app:layout_constraintLeft_toRightOf="@+id/idCardKycImg"
+                        app:layout_constraintTop_toTopOf="@+id/idCardKycImg" />
+
+                    <ImageView
+                        android:id="@+id/idCardKycFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/idCardKycImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/idCardKycTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/idCardKycImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/footer"
+                layout="@layout/facia_footer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

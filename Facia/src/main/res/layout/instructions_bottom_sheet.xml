@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/instructionsBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_border">
+
+    <View
+        android:id="@+id/instBottomSheetTopBar"
+        android:layout_width="130dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.25"
+        android:background="@drawable/dialog_background"
+        android:backgroundTint="@color/facia_black_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/crossImg"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:visibility="visible"-->
+<!--        android:src="@drawable/ic_retry"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/faceViewLeft"-->
+<!--        app:tint="@color/dark_text_color" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/instruction_top_heading"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:fontFamily="@font/inter_regular"-->
+<!--        android:text="@string/instructions_heading"-->
+<!--        android:textColor="@color/dark_text_color"-->
+<!--        android:textSize="17dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constrainedWidth="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/crossImg"-->
+<!--        app:layout_constraintHorizontal_bias="0.1"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/crossImg"-->
+<!--        app:layout_constraintTop_toTopOf="@id/crossImg" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/instBottomSheetTopBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/midMainLayout">
+
+        <ImageView
+            android:id="@+id/crossImg"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/dark_text_color" />
+
+        <ImageView
+            android:id="@+id/instructionOneImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_inst_perfect"
+            app:layout_constraintDimensionRatio="0.7:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/crossImg"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/midMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/topMainLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMainLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/midInnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginHorizontal="2dp"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/instructionTwoImg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_inst_dim_light"
+                app:layout_constraintDimensionRatio="0.7:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/instructionThreeImg"
+                app:layout_constraintBottom_toTopOf="@+id/midBarrier"/>
+
+            <TextView
+                android:id="@+id/instructionTwoTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingBottom="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/ensure_lit_env"
+                android:textColor="@color/facia_black_color"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:paddingHorizontal="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/instructionThreeTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructionTwoImg"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/midBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="instructionTwoTxt,instructionThreeTxt" />
+
+            <ImageView
+                android:id="@+id/instructionThreeImg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_inst_wearables"
+                app:layout_constraintDimensionRatio="0.7:1"
+                app:layout_constraintLeft_toRightOf="@+id/instructionTwoImg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/midBarrier"/>
+
+            <TextView
+                android:id="@+id/instructionThreeTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/remove_wearables"
+                android:textColor="@color/facia_black_color"
+                android:textSize="14sp"
+                android:paddingBottom="3dp"
+                android:textAlignment="center"
+                android:paddingHorizontal="2dp"
+                app:layout_constraintLeft_toRightOf="@+id/instructionTwoTxt"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructionThreeImg"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/midMainLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomInnerLayout"
+            android:layout_marginBottom="7dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="2dp"
+            android:layout_height="match_parent"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/instructionFourImg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_inst_improper_light"
+                app:layout_constraintDimensionRatio="0.7:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/instructionFiveImg"
+                app:layout_constraintBottom_toTopOf="@+id/bottomBarrier"/>
+
+            <TextView
+                android:id="@+id/instructionFourTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:textAlignment="center"
+                android:text="@string/perfect_light"
+                android:textColor="@color/facia_black_color"
+                android:textSize="14sp"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="7dp"
+                android:paddingHorizontal="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/instructionFiveTxt"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructionFourImg"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/bottomBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="instructionFourTxt,instructionFiveTxt" />
+
+            <ImageView
+                android:id="@+id/instructionFiveImg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_inst_mask"
+                app:layout_constraintDimensionRatio="0.7:1"
+                app:layout_constraintLeft_toRightOf="@+id/instructionFourImg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/bottomBarrier"/>
+
+            <TextView
+                android:id="@+id/instructionFiveTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/remove_mask"
+                android:textColor="@color/facia_black_color"
+                android:textSize="14sp"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="7dp"
+                android:textAlignment="center"
+                android:paddingHorizontal="2dp"
+                app:layout_constraintLeft_toRightOf="@+id/instructionFourTxt"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/instructionFiveImg"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

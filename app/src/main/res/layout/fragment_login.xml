@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/facia_white_color"
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loginMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/optLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:visibility="visible"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/uiHdng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Screens"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Switch
+                    android:id="@+id/showConsentSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="true"
+                    android:text="Consent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uiHdng"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showVerificationSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Verification Type"
+                    app:layout_constraintBottom_toBottomOf="@+id/showConsentSwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/showConsentSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showAddVerifSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="false"
+                    android:visibility="gone"
+                    android:text="Additional Verification"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showConsentSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Result"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showAddVerifSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showFeedbackSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:text="Feedback"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showAddVerifSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showGreetingSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Greetings"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/showFeedbackSwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/showFeedbackSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/showDocTypeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="false"
+                    android:visibility="gone"
+                    android:text="Document Type"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showFeedbackSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/docLivenessOptSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:visibility="gone"
+                    android:text="DocLiveness Opt"
+                    app:layout_constraintBottom_toBottomOf="@+id/showDocTypeSwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/showDocTypeSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                <TextView
+                    android:id="@+id/timeoutHdng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timeout"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showResult" />
+
+                <Switch
+                    android:id="@+id/qlTimeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:text="Quick Liveness"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timeoutHdng"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/dlTimeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:text="Detailed Liveness"
+                    app:layout_constraintBottom_toBottomOf="@+id/qlTimeSwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/qlTimeSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/blinkTimeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:text="Eyes Blinking"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/qlTimeSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <TextView
+                    android:id="@+id/instructionScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Passive Liveness Retry"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blinkTimeSwitch" />
+
+                <Switch
+                    android:id="@+id/qlBottomInstSwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:visibility="gone"
+                    android:paddingRight="6dp"
+                    android:text="QL Bottom Instructions"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/instructionScreen"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/qlLivenessRetrySwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:checked="true"
+                    android:paddingRight="6dp"
+                    android:text="3D QL Retry"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/qlIdMatchRetrySwitch"
+                    app:layout_constraintTop_toBottomOf="@+id/qlBottomInstSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/qlIdMatchRetrySwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:layout_constraintLeft_toRightOf="@+id/qlLivenessRetrySwitch"
+                    android:text="ID Match QL Retry"
+                    app:layout_constraintBottom_toBottomOf="@+id/qlLivenessRetrySwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/qlLivenessRetrySwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/ql3dLivenessRetryInstSwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:checked="true"
+                    android:paddingRight="6dp"
+                    android:text="Retry Instructions"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/qlLivenessRetrySwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/qlIdMatchRetryInstSwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toRightOf="@+id/ql3dLivenessRetryInstSwitch"
+                    android:text="ID Match QL Retry Instructions"
+                    app:layout_constraintBottom_toBottomOf="@+id/ql3dLivenessRetryInstSwitch"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ql3dLivenessRetryInstSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <TextView
+                    android:id="@+id/ql3dRetryCounter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="3D QL Retry Counter"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/qlIdMatchRetryCounter"
+                    app:layout_constraintTop_toBottomOf="@+id/ql3dLivenessRetryInstSwitch" />
+
+                <EditText
+                    android:id="@+id/ql3dLivenessRetryCounterEdt"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edit_txt_border"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="top|left"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:text="3"
+                    android:textColor="@color/dark_text_color"
+                    android:textColorHint="@color/light_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ql3dRetryCounter" />
+
+                <TextView
+                    android:id="@+id/qlIdMatchRetryCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID Match QL Retry Counter"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ql3dRetryCounter"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ql3dRetryCounter" />
+
+                <EditText
+                    android:id="@+id/qlIdMatchRetryCounterEdt"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_txt_border"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="top|left"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:text="3"
+                    android:textColor="@color/dark_text_color"
+                    android:textColorHint="@color/light_text_color"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ql3dLivenessRetryCounterEdt"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ql3dLivenessRetryCounterEdt" />
+
+
+                <TextView
+                    android:id="@+id/othersTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Others"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ql3dLivenessRetryCounterEdt" />
+
+                <Switch
+                    android:id="@+id/isDemoAppSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="false"
+                    android:visibility="gone"
+                    android:text="Demo App"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/othersTxt"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/emulatorDetectionSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emulator Detection"
+                    android:checked="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/othersTxt"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/detectLightSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:text="Detect Improper Light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/isDemoAppSwitch"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <TextView
+                    android:id="@+id/verificationType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Verification Type"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/emulatorDetectionSwitch" />
+
+                <RadioGroup
+                    android:id="@+id/serviceTypeRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/verificationType">
+
+                    <RadioButton
+                        android:id="@+id/faceLivenessOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="3D Liveness" />
+
+                    <RadioButton
+                        android:id="@+id/matchIdOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Match Photo ID" />
+
+                    <RadioButton
+                        android:id="@+id/docLivenessOpt"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Document Liveness" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/livenessTypeRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/serviceTypeRadioGroup">
+
+                    <RadioButton
+                        android:id="@+id/additionalOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Additional" />
+
+                    <RadioButton
+                        android:id="@+id/qlOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QL" />
+
+                    <RadioButton
+                        android:id="@+id/dlOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DL" />
+
+                    <RadioButton
+                        android:id="@+id/defaultOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default" />
+                </RadioGroup>
+
+                <Switch
+                    android:id="@+id/matchIdThroughCam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:text="Match ID through Camera input"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/livenessTypeRadioGroup"
+                    tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+                <RadioGroup
+                    android:id="@+id/docTypeRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/matchIdThroughCam">
+
+                    <RadioButton
+                        android:id="@+id/cardOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="ID Card" />
+
+                    <RadioButton
+                        android:id="@+id/passportOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Passport" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/ovalThreshold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="DL Oval Threshold:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/docTypeRadioGroup" />
+
+                <RadioGroup
+                    android:id="@+id/thresholdRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ovalThreshold">
+
+                    <RadioButton
+                        android:id="@+id/low_option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Low" />
+
+                    <RadioButton
+                        android:id="@+id/thresholdMediumOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Medium" />
+
+                    <RadioButton
+                        android:id="@+id/high_option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/ovalSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DL Oval Size"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thresholdRadioGroup" />
+
+                <RadioGroup
+                    android:id="@+id/ovalSizeRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ovalSize">
+
+                    <RadioButton
+                        android:id="@+id/smallOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small" />
+
+                    <RadioButton
+                        android:id="@+id/sizeMediumOpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Medium" />
+
+                    <RadioButton
+                        android:id="@+id/largeOpt"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Large" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/loginInnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/optLayout">
+
+                <ImageView
+                    android:id="@id/faciaLogoImg"
+                    android:layout_width="195dp"
+                    android:layout_height="58dp"
+                    android:background="@drawable/ic_facia_logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/loginHeadingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/welcome_str"
+                    android:textColor="@color/text_black"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/faciaLogoImg" />
+
+                <TextView
+                    android:id="@+id/welcomeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/inter_light"
+                    android:lineSpacingExtra="2sp"
+                    android:text="@string/welcome_detailed"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_black"
+                    android:textSize="18sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loginHeadingTxt" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <android.widget.Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="34dp"
+                android:background="@drawable/btn_bg_app"
+                android:fontFamily="@font/inter_medium"
+                android:padding="10dp"
+                android:text="@string/get_started"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/emailTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_mail"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pwdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_pwd"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

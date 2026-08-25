@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/facia_white_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@id/faciaLogoImg"
+                android:layout_width="195dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="55dp"
+                android:background="@drawable/ic_facia_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/faciaLogoImg">
+
+                <TextView
+                    android:id="@+id/verificationTypeHeadingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/verification_type_heading"
+                    android:textColor="@color/facia_black_color"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/faceLivenessParentLayout"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/faceLivenessParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="38dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/verificationTypeHeadingTxt">
+
+                    <ImageView
+                        android:id="@+id/faceTypeImg"
+                        android:layout_width="22dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/ic_camera"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/faceTypeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/face_liveness"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/faceTypeImg"
+                        app:layout_constraintLeft_toRightOf="@+id/faceTypeImg"
+                        app:layout_constraintTop_toTopOf="@+id/faceTypeImg" />
+
+                    <ImageView
+                        android:id="@+id/faceTypeFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/faceTypeImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/faceTypeTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/faceTypeImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/matchIdParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/faceLivenessParentLayout">
+
+                    <ImageView
+                        android:id="@+id/faceDocTypeImg"
+                        android:layout_width="22dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/ic_face_doc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/faceDocTypeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/match_photo_id"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/faceDocTypeImg"
+                        app:layout_constraintLeft_toRightOf="@+id/faceDocTypeImg"
+                        app:layout_constraintTop_toTopOf="@+id/faceDocTypeImg" />
+
+                    <ImageView
+                        android:id="@+id/faceDocTypeFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/faceDocTypeImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/faceDocTypeTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/faceDocTypeImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/docLivenessParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/verification_type_opt_bg"
+                    android:padding="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/matchIdParentLayout">
+
+                    <ImageView
+                        android:id="@+id/docLivenessTypeImg"
+                        android:layout_width="22dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/ic_face_doc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/docLivenessTypeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"
+                        android:text="@string/document_liveness"
+                        android:textColor="@color/facia_black_color"
+                        android:textSize="18sp"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/docLivenessTypeImg"
+                        app:layout_constraintLeft_toRightOf="@+id/docLivenessTypeImg"
+                        app:layout_constraintTop_toTopOf="@+id/docLivenessTypeImg" />
+
+                    <ImageView
+                        android:id="@+id/docLivenessTypeFwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:background="@drawable/ic_arrow_forward"
+                        app:layout_constraintBottom_toBottomOf="@+id/docLivenessTypeImg"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintLeft_toRightOf="@+id/docLivenessTypeTxt"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/docLivenessTypeImg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/footer"
+                layout="@layout/facia_footer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

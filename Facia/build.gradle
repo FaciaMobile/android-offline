@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+ext.camerax_version = "1.4.2"
+
+android {
+    namespace 'com.facia.faciasdk'
+
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // CameraX dependencies
+    def camerax_version = "1.4.2"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    implementation "androidx.camera:camera-video:${camerax_version}"
+
+    // Retrofit for API calling
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Google mMLKit to detect faces (unbundled)
+    implementation 'com.google.mlkit:face-detection:16.1.7'
+
+    // LiteRT 1.4.0 dependencies for card detection
+    implementation 'com.google.ai.edge.litert:litert:1.4.0'
+    implementation 'com.google.ai.edge.litert:litert-api:1.4.0'
+    implementation 'com.google.ai.edge.litert:litert-metadata:1.4.0'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.FaciaMobile'
+            artifactId = 'android-core'
+            version = '3.0.6'
+
+            tasks.getByName('publishReleasePublicationToMavenLocal').dependsOn(":Facia:bundleReleaseAar")
+            artifact("$buildDir/outputs/aar/Facia-release.aar")
+
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+
+                // CameraX dependencies
+                addDependency(dependenciesNode, 'androidx.camera', 'camera-camera2', "${camerax_version}")
+                addDependency(dependenciesNode, 'androidx.camera', 'camera-lifecycle', "${camerax_version}")
+                addDependency(dependenciesNode, 'androidx.camera', 'camera-view', "${camerax_version}")
+                addDependency(dependenciesNode, 'androidx.camera', 'camera-video', "${camerax_version}")
+
+                // Retrofit dependencies
+                addDependency(dependenciesNode, 'com.squareup.retrofit2', 'retrofit', '2.9.0')
+                addDependency(dependenciesNode, 'com.squareup.retrofit2', 'converter-gson', '2.9.0')
+
+                // Google ML Kit dependency
+                addDependency(dependenciesNode, 'com.google.mlkit', 'face-detection', '16.1.7')
+
+                // LiteRT 1.4.0
+                addDependency(dependenciesNode, 'com.google.ai.edge.litert', 'litert', '1.4.0')
+                addDependency(dependenciesNode, 'com.google.ai.edge.litert', 'litert-api', '1.4.0')
+                addDependency(dependenciesNode, 'com.google.ai.edge.litert', 'litert-metadata', '1.4.0')
+            }
+        }
+    }
+}
+
+// Function to add a dependency to the POM file
+def addDependency(dependenciesNode, groupId, artifactId, version) {
+    def dependencyNode = dependenciesNode.appendNode('dependency')
+    dependencyNode.appendNode('groupId', groupId)
+    dependencyNode.appendNode('artifactId', artifactId)
+    dependencyNode.appendNode('version', version)
+    dependencyNode.appendNode('scope', 'implementation')
+}
