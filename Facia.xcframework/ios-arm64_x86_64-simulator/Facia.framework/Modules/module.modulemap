@@ -1,0 +1,10 @@
+framework module Facia {
+  umbrella header "Facia.h"
+  export *
+
+  module * { export * }
+}
+
+module Facia.Swift {
+  header "Facia-Swift.h"
+}
