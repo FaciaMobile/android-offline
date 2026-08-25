@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "Facia"
+  spec.name         = "FaciaTesting"
   spec.version      = "1.0.2"
   spec.summary      = "iOS-SDK"
   
@@ -13,9 +13,9 @@ Pod::Spec.new do |spec|
   spec.author       = { "Facia" => "support@facia.ai" }
   spec.platform     = :ios, "11.0"
   
-  spec.source       = { :git => "https://github.com/FaciaMobile/ios-core.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/FaciaMobile/android-offline.git", :tag => "#{spec.version}" }
   
-    spec.ios.vendored_frameworks = 'Facia.xcframework'
+    spec.ios.vendored_frameworks = 'FaciaTesting.xcframework'
     spec.swift_version = "5"
   
   spec.exclude_files = "Classes/Exclude"
